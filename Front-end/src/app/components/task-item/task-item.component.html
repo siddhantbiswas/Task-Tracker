@@ -10,6 +10,12 @@
       [ngStyle]="{ color: 'red' }"
       [icon]="faTimes"
     ></fa-icon>
+  
+   <fa-icon
+      (click)="onCopy(task)"
+      [ngStyle]="{ color: 'green' }"
+      [icon]="faCoffee"
+    ></fa-icon>
   </h3>
   <p>{{ task.day }}</p>
 </div>
