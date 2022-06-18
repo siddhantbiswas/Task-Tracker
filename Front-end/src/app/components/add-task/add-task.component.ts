@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Input, Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 import { Task } from '../../Task';
@@ -10,9 +10,9 @@ import { Task } from '../../Task';
 })
 export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
-  text: string;
-  day: string;
-  reminder: boolean = false;
+  @Input() text: string;
+  @Input() day: string;
+  @Input() reminder: boolean;
   showAddTask: boolean;
   subscription: Subscription;
 
@@ -22,7 +22,14 @@ export class AddTaskComponent implements OnInit {
       .subscribe((value) => (this.showAddTask = value));
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.text === undefined){
+      this.text = ""}
+    if (this.day === undefined){
+      this.day = ""}
+    if (this.reminder === undefined){
+      this.reminder = false}
+  }
   
    ngOnDestroy() {
         // Unsubscribe to ensure no memory leaks

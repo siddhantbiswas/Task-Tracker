@@ -32,7 +32,7 @@ export class TaskService {
   }
 
   addTask(task: Task): Observable<Task> {
-    console.log("Task", task)
+    // console.log("Task", task)
     return this.http.post<Task>(this.apiUrl, task, httpOptions);
   }
 

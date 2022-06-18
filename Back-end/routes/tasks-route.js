@@ -1,5 +1,5 @@
 //create task
-//delete task
+//delete tasks
 //mark task as completed
 //get all tasks
 const Tasks = require("./tasks");

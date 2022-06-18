@@ -4,5 +4,5 @@
   [task]="task"
   (onDeleteTask)="deleteTask(task)"
   (onToggleReminder)="toggleReminder(task)"
-  (onCopyTask)="copyTask(task)"
+  (onCopyTask)="copyTask($event)"
 ></app-task-item>
